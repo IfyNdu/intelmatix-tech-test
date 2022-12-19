@@ -1,25 +1,40 @@
+## Using Lerna
+
+Install Lerna
+``` bash
+$ npm i -g lerna
+```
+
+Recursively install dependencies for client and server
+``` bash
+$ lerna bootstrap
+```
+
+Start dev server for both client and server
+``` bash
+$ lerna run start:dev
+```
+
+## Manually
 ### Server
 
 #### Installation
 
-##### From root directory
-
+From root directory
 ``` bash
 $ yarn --cwd packages/server/ install
 ```
 
-### Start DEV Server
+##### Start DEV Server
 
-##### From root directory
-
+From root directory
 ``` bash
 $ yarn --cwd packages/server/ start:dev
 ```
 
-### Start Server
+##### Or Start Server
 
-##### From root directory
-
+From root directory
 ``` bash
 $ yarn --cwd packages/server/ start
 ```
@@ -34,10 +49,9 @@ $ yarn --cwd packages/server/ start
 $ yarn --cwd packages/client/ install
 ```
 
-### Start DEV Server
+#### Start DEV Server
 
-##### From root directory
-
+From root directory
 ``` bash
 $ yarn --cwd packages/client/ start:dev
 ```
