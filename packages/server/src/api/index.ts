@@ -1,35 +1,24 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import { Context, LoggerInstance, Sequelize } from 'usa-types';
-import routes from './routes';
+import express, { Router } from "express";
+import { routes } from "./routes";
 
-
-const app = express();
+const app = express(),
+  router = Router();
 const PORT = process.env.APP_PORT;
+const whiteListedDomains = ["http://localhost:2345"];
 
-export default {
+export const Api = {
 
-  init: (sequelize: Sequelize, router: Context, logger: LoggerInstance) => {
+  init: () => {
 
-    app.use(logger.middleware);
-    app.use(bodyParser.json());
-    app.use('/api', routes(router));
+    app.use((_, res, next) => {
+      res.set("Access-Control-Allow-Origin", whiteListedDomains);
+      res.set("Access-Control-Allow-Method", "GET");
+      next();
+    });
+    app.use("/api", routes(router));
 
-    sequelize
-      .sync({ force: false })
-      .then(({ config }) => {
-
-        logger.info({ message: 'Sequelise started [SUCCESSFULLY]', config });
-        app.listen(PORT, err => {
-
-          if (err) { return logger.error(err); }
-
-          return logger.info(`server is listening on ${PORT}`);
-        });
-      })
-      .catch(error => {
-        logger.info({ message: 'Sequelise Failed to start [ERROR]', error });
-        process.exit(1);
-      });
+    app.listen(PORT, () => {
+      console.info(`server is listening on ${PORT}`);
+    });
   }
 }

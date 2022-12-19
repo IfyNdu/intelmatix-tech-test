@@ -1,0 +1,60 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  width: 1140px;
+
+  border: 1px dotted #efefef;
+  border-radius: 8px;
+}
+
+.left, 
+.right {
+  display: flex;
+}
+
+.right {
+  align-items: center;
+}
+
+.icon {
+  margin-right: 22px;
+}
+
+.name {
+  font-size: 22px;
+}
+
+.text {
+  font-size: 18px;
+}
+
+.maxStock {
+  color: gray;
+}
+
+.greyText {
+  color: gray;
+}
+
+.currStock::after {
+  content: "/";
+
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.rendererId::before {
+  content: "|";
+  margin-left: 4px;
+  margin-right: 4px;
+
+  font-size: 18px;
+  color: black;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

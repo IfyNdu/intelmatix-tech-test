@@ -1,12 +1,9 @@
-import { Context } from 'usa-types';
-import config from './config/config';
-import videos from './videos/videos';
+import { Router } from "express";
+import { stock } from "./stock/stock";
 
+export const routes = (router: Router) => {
 
-export default (router: Context): Context => {
-
-  router.use('/config', config(router));
-  router.use('/videos', videos(router));
+  router.use("/stock", stock(router));
 
   return router;
 }

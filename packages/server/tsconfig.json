@@ -6,21 +6,21 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "lib": [
-      "es2015"
+      "es2022"
     ],
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "dist",
     "paths": {
-      "usa-types": [
+      "intel-types": [
         "./src/types/index.ts"
       ],
-      "usa-utils": [
+      "intel-utils": [
         "./src/utils/index.ts"
       ]
     },
     "removeComments": true,
-    "target": "es6",
+    "target": "ES2022",
     "sourceMap": true
   },
   "exclude": [

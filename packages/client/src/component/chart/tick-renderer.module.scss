@@ -1,0 +1,11 @@
+.text {
+  fill: #818589;
+
+  font-weight: 200;
+
+  &.isToday {
+    fill: #36454F;
+    
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+};
+
+.chart {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  width: 1140px;
+
+  border: 1px dotted #efefef;
+  border-radius: 8px;
+}
