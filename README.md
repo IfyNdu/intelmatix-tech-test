@@ -58,6 +58,7 @@ $ yarn --cwd packages/client/ start:dev
 
 > **Note** Access web app on `http://localhost:2345/`
 
+![Dec-20-2022 19-19-42](https://user-images.githubusercontent.com/15639127/208750288-5593e43c-cc0d-47f5-bda0-c1d7dad842b4.gif)
 
 ### Possible Improvements
 * Provide unit test coverage for util functions, hooks and components.
